@@ -32,3 +32,8 @@ class Pet(db.Model):
 
     def greet(self):
         return f"Hi I am {self.name}, the {self.species}"
+
+    def feed(self, amt=20):
+        """update hunger based on amount"""
+        self.hunger -= amt
+        self.hunger = max(self.hunger, 0)
